@@ -1,11 +1,18 @@
-<h1>Blockchain</h1>
+<br>
+<br>
+<h1 class="text-center">Blockchain</h1>
 
-<%= form_for :crypto, url: {action: "create"} do |f| %>
-	<div class="form-group">
+<div class="row justify-content-center">
+	<div class="form-group has-success">
+	<%= form_for :crypto, url: {action: "create"} do |f| %>
+	<div class="form-group mb">
       <label>Choix de la crypto</label>  
-      <%= f.collection_select :crypto_id, Crypto.order(:name),:id,:name, {include_blank: false}, {class: "form-control"} %>
+     <%= f.collection_select :crypto_id, Crypto.order(:name),:id,:name, {include_blank: false}, {class: "form-control"} %>
     </div>
-    <div class="actions">
-    <%= f.submit "Valider" %>
+    <div class="row justify-content-center">
+    	<button type="submit" class="btn btn-primary btn-lg">Valider</button>
 	</div>
-<% end %>
+	</div>
+</div>
+
+	<% end %>
