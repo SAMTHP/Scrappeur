@@ -1,0 +1,11 @@
+<h1>Scrappers#index</h1>
+
+<%= form_for :crypto, url: {action: "create"} do |f| %>
+	<div class="form-group">
+      <label>Choix de la crypto</label>  
+      <%= f.collection_select :crypto_id, Crypto.order(:name),:id,:name, {include_blank: false}, {class: "form-control"} %>
+    </div>
+    <div class="actions">
+    <%= f.submit "Valider" %>
+	</div>
+<% end %>
