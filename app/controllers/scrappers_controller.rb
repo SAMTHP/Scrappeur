@@ -5,15 +5,15 @@ class ScrappersController < ApplicationController
 
   	@scrapp = @scrapping.perform
 
-  	#if Crypto.find_by(name: 'Bgogo Token')
-  		#@scrapping.perform.each do |k, v|
-  			#Crypto.update(name: k, value: v)
-  	#	end
-  #	else
+  	if Crypto.find_by(name: 'Bgogo Token')
+  		@scrapping.perform.each do |k, v|
+  			Crypto.update(name: k, value: v)
+  		end
+  	else
 	  	@scrapping.perform.each do |k, v|
 	  		Crypto.create(name: k, value: v)
 	  	end
-	#end
+	end
 
   end
 
